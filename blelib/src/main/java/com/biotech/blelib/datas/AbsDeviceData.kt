@@ -13,10 +13,12 @@ abstract class AbsDeviceData : Data {
     var isSendData = true
     var id = 0
     var dataValue: String? = null
+    var originalValue: ByteArray? = null
 
     constructor()
     constructor(data: Data) {
         mValue = data.value
+        originalValue = mValue
     }
 
     constructor(isSendData: Boolean, id: Int, dataValue: String?) {

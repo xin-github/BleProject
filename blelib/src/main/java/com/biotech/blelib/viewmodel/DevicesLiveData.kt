@@ -131,7 +131,7 @@ class DevicesLiveData constructor(
     }
 
     companion object {
-        private val FILTER_UUID = ParcelUuid(BleConstant.SERVICE_UUID)
+        private val FILTER_UUID = ParcelUuid(BleConstant.getServiceUUID())
         private val FILTER_RSSI = -50 // [dBm]
         private val FILTER_NAME = "LL"
     }

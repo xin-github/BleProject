@@ -53,10 +53,11 @@ open class ScannerViewModel : ViewModel {
 
     constructor() {
         registerBroadcastReceivers(BaseApplication.instance!!)
-        val filterUuidRequired = false
-        val filterName = true
-        val filerNearbyOnly = false
-        _devicesLiveData = DevicesLiveData(filterUuidRequired, filterName, filerNearbyOnly)
+        _devicesLiveData = DevicesLiveData(
+            mFilterUuidRequired = false,
+            mFilterNameRequired = false,
+            mFilterNearbyOnly = false
+        )
 
         _bleEnableLive.value = isBleEnabled()
         _locationEnableLive.value = isLocationPermissionsGranted(BaseApplication.instance!!)

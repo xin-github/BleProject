@@ -58,10 +58,10 @@ class SingleDeviceManager(context: Context,
         }
 
         override fun isRequiredServiceSupported(gatt: BluetoothGatt): Boolean {
-            val service = gatt.getService(BleConstant.SERVICE_UUID) as BluetoothGattService?
+            val service = gatt.getService(BleConstant.getServiceUUID())
             if (service != null) {
-                mDeviceWriteCharacteristic = service.getCharacteristic(BleConstant.WRITE_UUID)
-                mDeviceReadCharacteristic = service.getCharacteristic(BleConstant.READ_UUID)
+                mDeviceWriteCharacteristic = service.getCharacteristic(BleConstant.getWriteUUID())
+                mDeviceReadCharacteristic = service.getCharacteristic(BleConstant.getReadUUID())
 
                 mSupport = true
                 return mSupport
