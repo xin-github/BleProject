@@ -27,6 +27,7 @@
 
         <activity android:name=".scan.ScanListAct"/>
         <activity android:name=".showlog.ShowLogAct"/>
+        <activity android:name=".uuid.ResetUUIDAct"/>
     </application>
 
 </manifest>
