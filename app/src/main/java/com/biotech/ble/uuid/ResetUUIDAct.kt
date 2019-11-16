@@ -1,6 +1,7 @@
 package com.biotech.ble.uuid
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.biotech.ble.R
 import com.pupupula.blelib.util.BleConstant
@@ -25,6 +26,8 @@ class ResetUUIDAct : AppCompatActivity() {
                 BleConstant.setServiceUUID(service)
                 BleConstant.setReadUUID(read)
                 BleConstant.setWriteUUID(write)
+                Toast.makeText(this, "设置成功", Toast.LENGTH_SHORT).show()
+                finish()
             }
         }
         etService.setText(BleConstant.getServiceUUID().toString())
