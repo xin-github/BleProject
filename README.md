@@ -10,7 +10,9 @@ BleProject
 
 手机端的页面如下:
 
-![device-2019-11-16-142543](/Users/tuxin/Desktop/device-2019-11-16-142543.png)
+
+
+![device-2019-11-16-142543](https://github.com/xin-github/BleProject/blob/master/device-2019-11-16-142543.png)
 
 
 
@@ -22,7 +24,7 @@ BleProject
 
 
 
-![device-2019-11-16-143053](/Users/tuxin/Desktop/device-2019-11-16-143053.png)
+![device-2019-11-16-143053](https://github.com/xin-github/BleProject/blob/master/device-2019-11-16-143053.png)
 
 
 
@@ -30,5 +32,5 @@ BleProject
 
 在这个页面会吧蓝牙传输过来的所有数据依次打印出来,具体结果如下:
 
-![device-2019-11-16-143337](/Users/tuxin/Desktop/device-2019-11-16-143337.png)
+![device-2019-11-16-143337](https://github.com/xin-github/BleProject/blob/master/device-2019-11-16-143337.png)
 
