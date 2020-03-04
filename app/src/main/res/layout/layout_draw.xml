@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLine"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <com.biotech.ble.data.DrawView
+        android:id="@+id/drawView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/guideLine"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvStartSimulate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:background="#F1F1F1"
+        android:padding="10dp"
+        android:text="开始模拟"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideLine" />
+
+    <TextView
+        android:id="@+id/tvNextType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="#F1F1F1F1"
+        android:padding="10dp"
+        android:text="下一类型"
+        app:layout_constraintLeft_toLeftOf="@id/tvStartSimulate"
+        app:layout_constraintTop_toBottomOf="@id/tvStartSimulate" />
+
+    <TextView
+        android:id="@+id/tvListenBle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:background="#F1F1F1F1"
+        android:padding="10dp"
+        android:text="接受蓝牙数据"
+        app:layout_constraintLeft_toRightOf="@id/tvStartSimulate"
+        app:layout_constraintTop_toTopOf="@id/tvStartSimulate" />
+
+    <TextView
+        android:id="@+id/tvConnectedBle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="30dp"
+        android:text="当前连接设备："
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvNextType" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

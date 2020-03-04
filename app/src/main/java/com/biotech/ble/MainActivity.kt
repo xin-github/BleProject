@@ -4,8 +4,10 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.biotech.ble.scan.ScanListAct
+import com.biotech.ble.utils.FakeDataReader
 import com.biotech.ble.uuid.ResetUUIDAct
 import kotlinx.android.synthetic.main.activity_main.*
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,5 +24,12 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, ResetUUIDAct::class.java)
             startActivity(intent)
         }
+
+        tvStartSimulate.setOnClickListener {
+            val intent = Intent(this, DrawActivity::class.java)
+            startActivity(intent)
+        }
+
+
     }
 }

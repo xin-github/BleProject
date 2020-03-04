@@ -1,2 +1,2 @@
-include ':app', ':blelib', ':commonlib'
+include ':app', ':blelib', ':commonlib', ':nativelib'
 rootProject.name='BleProject'

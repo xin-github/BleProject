@@ -86,6 +86,16 @@ class DevicesManager private constructor() : BleManagerCallbacksAdapter(), IDevi
         }
     }
 
+    fun getAllDevices(): List<DiscoveredBluetoothDevice> {
+        return mLightDeviceManagerMap.keys.toList()
+    }
+
+    fun getAllConnectedDevices(): List<DiscoveredBluetoothDevice> {
+        return mLightDeviceManagerMap.keys.filter {
+            isDeviceConnected(it)
+        }
+    }
+
     fun findDiscoveredBluetoothDevice(address: String): DiscoveredBluetoothDevice? {
         val keys = mLightDeviceManagerMap.keys
         return keys.find {

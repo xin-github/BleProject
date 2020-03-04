@@ -36,6 +36,10 @@ class ScanListAct : AppCompatActivity(), ItemClickListener<DiscoveredBluetoothDe
     private var mAdapter = ScanListAdapter(this)
     private val PERMISSION_REQUEST_CODE = 111
 
+    companion object {
+        const val REQUEST_CODE = 100
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.wifi_scan_list_act)
@@ -114,13 +118,6 @@ class ScanListAct : AppCompatActivity(), ItemClickListener<DiscoveredBluetoothDe
         override fun onConnectStateChange(device: BluetoothDevice, connectState: Int) {
 //            _connectStateLive.value = connectState
         }
-
-//        override fun onDeviceNotSupported(device: BluetoothDevice) {
-////            _connectStateLive.value = BluetoothGatt.STATE_DISCONNECTED
-//        }
-//
-//        override fun onError(device: BluetoothDevice, message: String, errorCode: Int) {
-//        }
     }
 
     private val mEnableIndicationCallback = object : EnableIndicationDoneCallback {
@@ -152,6 +149,8 @@ class ScanListAct : AppCompatActivity(), ItemClickListener<DiscoveredBluetoothDe
 
     private fun connected() {
         progress.hide()
+        setResult(Activity.RESULT_OK)
+        finish()
     }
 
 
@@ -174,7 +173,6 @@ class ScanListAct : AppCompatActivity(), ItemClickListener<DiscoveredBluetoothDe
 //        setTitleRes(R.string.connecting)
         stopScanAndStartConnect(data)
         showDialog()
-        ShowLogAct.startAct(this, data)
     }
 
     private fun showDialog() {
@@ -185,7 +183,7 @@ class ScanListAct : AppCompatActivity(), ItemClickListener<DiscoveredBluetoothDe
     private fun stopScanAndStartConnect(device: DiscoveredBluetoothDevice) {
         mDeviceMatched = true
         mFoundDevice = device
-        mScannerViewModel.stopScan()
+        stopScan()
 
         registerBleCallbacks()
         DevicesManager.instance.setDevice(device)
